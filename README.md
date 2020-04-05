@@ -1,2 +1,2 @@
-# Operacoes matematicas
- segundo repositorio do curso de javascript
+# Operacões matemáticas
+ Segundo repositório do curso de javascript
