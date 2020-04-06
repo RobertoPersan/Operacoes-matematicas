@@ -2,7 +2,7 @@
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
     <title>Funções</title>
 </head>
 <body>
@@ -10,11 +10,19 @@
 <script>
 
     function calculaAreaTerreno(Largura, comprimento){
+        
+        largura = parseFloat(largura);
+        comprimento = parseFloat(comprimento);
+
         var area = largura * comprimento;
         return area;
     }
 
-    document.write(" O terreno possui " + calculaAreaTerreno(15, 25) + " metros quadrados!");
+    var largura = prompt("Digite a largura do terreno");
+    var comprimento = prompt("Digite o comprimento do terreno");
+
+    var areaTerreno = calculaAreaTerreno(largura, comprimento);
+    document.write(" O terreno possui " + areaTerreno + " metros quadrados!");
 
 </script>
 </body>
