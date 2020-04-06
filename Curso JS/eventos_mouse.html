@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    
+    <title>Eventos do mouse</title>
+</head>
+<body>
+    
+    <div onclick="msgBoasVindas()" style="background: #CCC; height:150px; width:150px"></div>
+    <br/>
+
+    <div ondblclick="msgBoasVindas()" style="background: #CCC; height:150px; width:150px"></div>
+    <br/>
+
+    <div onmousedown="msgBoasVindas()" style="background: #CCC; height:150px; width:150px"></div>
+    <br/>
+
+    <div onmouseover="msgBoasVindas()" style="background: #CCC; height:150px; width:150px"></div>
+    <br/>
+
+    <div onmouseout="msgBoasVindas()" style="background: #CCC; height:150px; width:150px"></div>
+
+    <script>
+        //onclick : só é executado se clicado uma vez e por completo no obijeto.
+
+        //ondblclick : só é executado so ouver duplo click no obijeto.
+
+        //onmousedown : é executado com um click, mas não precisa ser completo.
+
+        //onmouseover : só é executado quando o cursor do mouse sobrepõe o objeto.
+
+        //onmouseout : é executado quando o cursor do mouse sobrepõe o objeto e sai dele.
+
+        //Esses eventos podem ser utilizador em qualquer elemento html, div, p, spam e etc.
+        function msgBoasVindas(){
+                alert('Seja bem vindo, você pressionou o botão esquerdo so mouse sobre este elemento');
+        }
+    </script>
+
+</body>
+</html>
