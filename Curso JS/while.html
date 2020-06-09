@@ -42,7 +42,7 @@
         }
       */
         // Loop com (for)
-        for (var contador = 0; contador < 10; contador++) {
+       /* for (var contador = 0; contador < 10; contador++) {
             console.log(contador);
         }
         // Usando um (AREI)
@@ -59,6 +59,42 @@
         for (; i < numAleatorios.length;) {
             console.log(`Sem valor inicial e incremento: ${numAleatorios[i]}`);
             i++;
+        }
+        */
+//Para não entrar em loope infinito teos que declarar uma condição falsa para ele.
+        var condicao = true;
+        var contador = 1;
+
+        for (; condicao; ) {
+            if (contador % 5 === 0) {
+                condicao = false;
+            }
+            console.log(`condição booleana simples: ${contador}`); ++contador;
+        }
+//Usando o break e o continue.
+      /*  for (var i = 0; i < 10; i++) {
+            if (i === 5) {
+                break;
+            }
+            console.log(`Utilizando break ${i}`);
+        }
+
+        for (var i = 0; i < 50; i++){
+            if (i % 2 === 0) {
+                continue;
+            }
+            console.log('Utilizando o continue', i);
+        }
+    */
+        //PING - PONG Usando o for
+        for (var i = 0; i < 100; i++) {
+            if (i % 3 === 0 && i % 5 === 0){
+                console.log(i,'PING - PONG');
+            }else if (i % 3 === 0){
+                console.log(i,'PING');
+            }else if (i % 5 === 0){
+                console.log(i,'PONG');
+            }
         }
     </script>
 </body>
