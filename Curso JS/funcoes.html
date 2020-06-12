@@ -8,7 +8,7 @@
 <body>
     
 <script>
-
+/*
     function calculaAreaTerreno(Largura, comprimento){
         
         largura = parseFloat(largura);
@@ -23,6 +23,33 @@
 
     var areaTerreno = calculaAreaTerreno(largura, comprimento);
     document.write(" O terreno possui " + areaTerreno + " metros quadrados!");
+*/
+    function escreva(){
+        console.log("Eu consegui hehehe");
+    }
+    escreva();
+
+    function escrevaMensagem(mensagem) {
+       console.log(mensagem); 
+    }
+    escrevaMensagem('Hello Worlde');
+
+    function soma(a, b){
+        return a + b;
+    }
+    var resultadoSoma = soma (10, 5);
+    console.log(resultadoSoma);
+
+    function somaTudo(numeros){
+        var total = 0;
+        for (var num of numeros){
+            total = total + num;
+        }
+        return total;
+    }
+    var arreyNumero = [3, 5, 9, 10, 12, 01, 6];
+    var resultado = somaTudo(arreyNumero);
+    console.log('somaTudo', '=', resultado);
 
 </script>
 </body>
