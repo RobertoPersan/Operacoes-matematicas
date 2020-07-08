@@ -51,6 +51,331 @@
     var resultado = somaTudo(arreyNumero);
     console.log('somaTudo', '=', resultado);
 
+
+    function escreverEndereco(rua, cidade, pais, ...complementos){
+        console.log(rua);
+        console.log(cidade);
+        console.log(pais);
+
+        console.log(complementos);
+
+    }
+        escreverEndereco('Parana', 'Simões Filho', 'Brasil', 'Cep 4270000', 'Bahia',);
+
+        //Função auto invocavel, serve para isolar uma função ou variavel do restando do codigo ou de uma biblioteca ja existente
+        (function autoExecuta(nome){
+            console.log('Executei', nome);
+        }('José'));
+
+        //Função que é armazenada dentro de uma variavel
+        var subritaiNumeros = function subitrai(a, b){
+            return a - b;
+        };
+        console.log(subritaiNumeros(10, 3));
+
+
+        //Função anonima
+        var subitraiNum = function (a, b, c){
+            return a - b - c;
+        };
+        console.log(subitraiNum(10, 3, 6));
+
+
+        //Função Callback são funções que são passadas com parametros de outras funções e executadas dentro delas.
+
+        function somaCallback(a, b, funCallback){
+            return funCallback(a + b);
+        }
+        console.log(somaCallback(10, 3, function(total) {
+            return total * 2;
+        }));
+
+        var usuario = {
+            nome: 'Roberto',
+            idade: 32,
+            Estudo: 'JavaScript'
+
+        };
+
+        console.log(usuario);
+        console.log(usuario.nome);
+        console.log(usuario.idade);
+        console.log(usuario.Estudo);
+
+        usuario.ano = 2020;
+        console.log(usuario.ano);
+
+
+      var resolveMeFirst = function soma(a, b){
+        return a + b;
+
+      };
+      console.log(resolveMeFirst(3, 2));
+
+
+//Retornando o menor número
+      function minimo(a, b){
+        return Math.min(a, b);    
+      }
+      console.log(Math.min(0, 10));
+      console.log(Math.min(0, -10));
+
+
+//Função recursiva de par ou ímpar
+      function isEven(x){
+        if(x % 2 == 0){
+           return true;
+        }else{ return false;}
+      }
+        console.log(isEven(50));
+        console.log(isEven(75));
+        console.log(isEven(-1));
+
+      
+         /* for(let n = 0; n <= 50; n++){
+
+            if(n % 2 == 0){
+              console.log(`${n} é Par`);
+            }else{console.log(`${n} é Ínpa`)}
+          }*/
+
+    //Descobrindo número primo com interação do usuario
+        /*let primo = prompt('Digite um nupero para descobrir se ele é primo')
+
+        if(primo % 3 == 0 && primo % 5 == 0){
+              alert('É divizivel por 3 e por 5');
+
+          }else if(primo % 3 == 0){
+              alert('É divisivel por 3');
+            
+          }else if(primo % 5 == 0){
+              alert('É divisivel por 5');
+
+          }else{alert('Não é divisivel nem por 3 nem por 5');} 
+      */
+
+     //Outra foma de identificar números primos com qualquer número digitado
+/*let num = prompt('Digite um nupero para descobrir se ele é primo');
+let divisor = 0;
+
+          for(let i = 1; i <= num; i++){
+              if(num % i == 0){
+                  divisor++;
+              }
+          }
+          if(divisor == 2){
+              alert(`O número ${num} é primo`);
+          }else{alert(`O número ${num} NÃO é primo`);}
+*/
+
+/*let idade = prompt('Digite a sua idade:');
+let cnh = false;
+
+        if(idade > 18 && cnh == true){
+            alert('Você é apito para dirigir');
+
+        }else if(idade >= 18 && cnh == false){
+            alert('Você tem a idade ideal para dirigir, mas por não possuir CNH e esta impocibilitado de conduzir um veiculo');
+
+        }else{alert('Você não é apito para dirigir, por ser menor de idade e não possuir CNH');
+
+        }*/
+
+        let a = 10;
+
+        function multiiplicar(x, y){
+            let a = x * y;
+
+            if(a > 10){
+
+                let a = 0;
+                a++;
+                console.log(a);
+            }
+
+            console.log(a);
+        }
+
+        console.log(a);
+
+        multiiplicar(3, 7);
+
+//Arrow function
+        let consoleTeste = () =>{
+            console.log('Olá Mundo');
+        };
+        consoleTeste();
+
+//Forma mais reduzida de se escrever uma Arrow Function
+        let sum = (n1, n2) => n1 + n2;
+        console.log(sum(1, 4));
+
+
+//Parametros Opicionais em Função
+        function saudacao(nome, idade){
+            if(idade === undefined){
+                console.log("Olá " + nome);
+            }else{
+                console.log("Olá "+ nome +" você tem " + idade + "anos");
+            }
+        }
+
+        saudacao("Roberto");
+        saudacao("Beto ", 29);
+
+//Argumentos com valor default
+        function repetirFrase(frase, n = 2){
+            for(let x = 1; x <= n; x++){
+                console.log(frase + " " + x);
+            }
+        }
+
+        repetirFrase("Testando", 5);
+        repetirFrase("Só duas vezes");
+
+
+        function makeFunc(){
+            let nome = "Beto";
+            function displayNome(){
+                console.log(nome);
+            }
+            return displayNome;
+        }
+
+        let myFunc = makeFunc();
+        myFunc();
+
+//Closure(Função que se lembra do escopo onde foi criado)
+        function lembraSoma(x){
+            return function(y){
+                return x + y;
+            }
+        }
+
+        let soma1 = lembraSoma(2);
+        console.log(soma1(5));
+
+
+//Função Recursiva outros exemplos
+     /*   function recursao(n){
+
+            if(n - 1 < 2) {
+                console.log("Recursão parou");
+            }else if(n % 2 != 0){
+                console.log("Número ímpar " + n);
+                recursao(n - 1);
+            }else{
+                console.log("Número par " + n);
+                recursao(n - 2);
+            }
+        }
+
+        recursao(39);
+        recursao(10);
+        recursao(55);
+     */   
+    
+//Exercício1: imprimir Hello World no console com função
+    function olaMundo(){
+    
+        console.log("Hello World!");
+    }
+    
+    olaMundo();
+    
+
+//Exercício2:
+   /* function idadeAnos(){
+     x = prompt("Qual a sua idade?");
+    return x;
+    }
+   
+    idadeAnos();
+    alert(`Você tem ${x} anos`);
+  */  
+
+//Forma simples imprimindo no console
+    function imprimeIdade(idade){
+    console.log(`Você tem ${idade} anos`);
+    }
+
+    imprimeIdade(20);
+    imprimeIdade(12);
+    imprimeIdade(45);
+    imprimeIdade(32);
+
+//Exercício3:
+    function doisNum(a,b){
+        return a + b;
+    }
+
+    console.log(doisNum(3, 5));
+    console.log(doisNum(5, 35));
+    
+ //Exercício4: Imprimindo números aleatorios
+    function aleatorio(x){
+        return Math.floor(Math.random() * x) + 1;
+    }   
+
+    console.log(aleatorio(5));
+    console.log(aleatorio(10));
+
+//Exercício5:
+  /*  function dirigir(idade){
+        idade = prompt("Qual a sua idade?");
+
+        if(idade >= 18){
+            console.log(`Você tem ${idade} anos de idade e pode se matricular na auto escola`);
+        }else{
+            console.log(`Você não pode se matricular na auto escola por que tem ${idade} anos de idade`);
+        }
+    }
+
+    dirigir();
+*/
+
+//Exercício6: Identificando qual tem mais caracteres
+    function quantidadeCaracter(texto){
+        if(texto.length > 10){
+            console.log("Texto muito longo");
+        }else{
+            console.log("Texto dentro do limite");
+        }
+        console.log(texto.length);
+    }
+
+    quantidadeCaracter("Teste");
+    quantidadeCaracter("Vamos testar se funciona");
+    quantidadeCaracter("texto A");
+    
+
+//Exercício7: Potencia de um numero
+    function potencia(a, b){
+        return Math.pow(a, b);
+        //return a ** b; // Ou usar dessa forma
+    }    
+
+    potencia();
+
+    console.log(potencia(3, 2));
+    console.log(potencia(8, 2));
+    console.log(potencia(12, 4));
+
+//Exercício8: Decrementando em números Pares
+    function decrementoPar(num){
+        for(let x = num;x >= 0; x--){
+            if(x % 2 == 0){
+                console.log(x, 'Par');
+            }
+        }
+    }    
+
+    decrementoPar();
+    console.log(decrementoPar(15));
+    //console.log(decrementoPar(10));
+    //console.log(decrementoPar(23));
+
+
 </script>
 </body>
 </html>
